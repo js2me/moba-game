@@ -1,0 +1,27 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+.title{
+  margin: 0.8em 0;
+  text-shadow: 0 2px 13px rgba(0, 0, 0, 0.27);
+}
+.routes{
+  margin-top: 1.67em;
+  margin-bottom: 0.67em;
+  font-weight: bold;
+}
+
+.routerLink{
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 1.4em;
+  color: rgb(77, 77, 77);
+  border: 1px solid rgb(77, 77, 77);
+  padding: 1px 7px;
+}
+.routerLinkActive{
+  color: rgb(245, 245, 245);
+  background: rgb(77, 77, 77);
+}
