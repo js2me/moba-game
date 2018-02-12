@@ -1,0 +1,50 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+  transition: height 450ms linear;
+}
+.title{
+  margin: 0.8em 0;
+  text-shadow: 0 2px 13px rgba(0, 0, 0, 0.27);
+  transition: all 450ms linear;
+}
+.routes{
+  margin-top: 1.67em;
+  margin-bottom: 0.67em;
+  font-weight: bold;
+  transition: all 450ms linear;
+}
+
+.routerLink{
+  text-decoration: none;
+  font-size: 1.4em;
+  color: rgb(77, 77, 77);
+  border: 1px solid rgb(77, 77, 77);
+  padding: 1px 7px;
+}
+.routerLinkActive{
+  color: rgb(245, 245, 245);
+  background: rgb(77, 77, 77);
+}
+
+.header.current-page-is-root {
+  height: 100%;
+}
+
+.header.current-page-is-root ~ .normal {
+  min-height: 0;
+  display: none;
+}
+
+.header.current-page-is-root {
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header.current-page-is-root .title {
+  font-size: calc(10vw + 10vh);
+}
+
+.header.current-page-is-root .routes {flex: 1;}

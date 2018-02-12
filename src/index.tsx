@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history';
 import { configureStore } from './store';
 import { AsyncComponent } from './utils/AsyncComponentLoader';
 import { Header } from './components/Header/index';
-import './style.css';
+import './style.scss';
 
 const store = configureStore();
 const history = createBrowserHistory();

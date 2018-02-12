@@ -75,6 +75,29 @@ module.exports = {
           ]
         })
       },
+      // css
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              query: {
+                sourceMap: !isProduction,
+                importLoaders: 1,
+                localIdentName: '[local]__[hash:base64:5]'
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: !isProduction
+              }
+            }
+          ]
+        })
+      },
       // static assets
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.png$/, use: 'url-loader?limit=10000' },

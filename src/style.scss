@@ -35,19 +35,19 @@ body {
   font-weight: 300;
 }
 
-div[id='root']{
+div#root{
   width:inherit;
   height:inherit;
   position: relative;
-  padding: 1em 5em 2em;
-}
-div[id='root']>div{
-  width:inherit;
-  height:inherit;
-  position: relative;
-}
-div[id='root']>div>div:nth-child(2) {
-  min-height: 90%;
+  padding: 5% 10% 5%;
+  >div{
+    width:inherit;
+    height:inherit;
+    position: relative;
+    .normal {
+      min-height: 90%;
+    }
+  }
 }
 button,
 input[type="checkbox"] {
