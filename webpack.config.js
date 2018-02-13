@@ -64,11 +64,11 @@ module.exports = {
               options: {
                 ident: 'postcss',
                 plugins: [
-                  require('postcss-import')({ addDependencyTo: Webpack }),
+                  require('postcss-import')({addDependencyTo: Webpack}),
                   require('postcss-url')(),
                   require('postcss-cssnext')(),
                   require('postcss-reporter')(),
-                  require('postcss-browser-reporter')({ disabled: isProduction }),
+                  require('postcss-browser-reporter')({disabled: isProduction}),
                 ]
               }
             }
@@ -99,9 +99,11 @@ module.exports = {
         })
       },
       // static assets
-      { test: /\.html$/, use: 'html-loader' },
-      { test: /\.png$/, use: 'url-loader?limit=10000' },
-      { test: /\.jpg$/, use: 'url-loader?limit=10000' },
+      {test: /\.html$/, use: 'html-loader'},
+      {
+        test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        use: 'base64-inline-loader?limit=5000&name=[name].[ext]'
+      }
     ],
   },
   plugins: [

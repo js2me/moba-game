@@ -2,133 +2,102 @@
   display: flex;
   justify-content: space-between;
   height: 10%;
-  transition: height 450ms linear;
 
-  &:not(.current-page-is-root){
-    .routes{
-      flex: 0.701;
-    }
-    .title{
-      flex: 1;
+  &:not(.current-page-is-root) {
+    margin: 0 15%;
+    ~ .normal {
+      margin: 3% 15% 0;
     }
     .background-header {
       filter: brightness(.8) blur(10px);
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    .header-content {
+      flex-direction: row;
+      width: 100%;
+      .title {
+        font-size: 45px;
+      }
+      .routes {
+        margin-top: 12px;
+        flex: .8;
+        height: 50px;
+        justify-content: space-between;
+        transition: none;
+      }
+      .routerLink {
+        font-size: 34px;
+        padding-top: 10px;
+        border-radius: 1px;
+      }
     }
   }
 }
 
 .background-header {
-  background-image: url(../../../assets/kremlin_gray.jpg);
-  position: absolute;
+  background-image: url(../../assets/kremlin_gray.jpg);
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
+  border-radius: 2px;
   height: 100%;
   background-size: cover;
   z-index: -1;
-  transition: transform 4s linear, opacity .8s ease;
+  transition: transform 2s linear, opacity .8s ease, filter 2s linear;
   background-position-y: bottom;
   background-position-x: center;
   opacity: 0;
+  background-repeat: no-repeat;
   transform: scale(1.2);
-  &.animation-triggered{
-    opacity: 1;
-    transform: scale(1.1);
-  }
   &.trigger-animation {
     opacity: 1;
-    transform: scale(1);
-    -webkit-animation-name: background-header-image-picker; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 25s; /* Safari 4.0 - 8.0 */
-    -webkit-animation-direction: reverse; /* Safari 4.0 - 8.0 */
-    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
-    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
-    animation-name: background-header-image-picker;
-    animation-duration: 25s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    transform: scale(0.9);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3);
   }
 }
 
-@keyframes background-header-image-picker {
-  0%{
-    background-image: url(../../../assets/kremlin_gray.jpg);
-    transform: scale(1);
-  }
-
-  25%{
-    transform: scale(1.2);
-  }
-
-  50%{
-    background-image: url(../../../assets/kremlin_gray_hands.jpg);
-    transform: scale(1);
-  }
-
-  75%{
-    transform: scale(1.2);
-  }
-
-  100%{
-    background-image: url(../../../assets/kremlin_gray_kisses.jpg);
-    transform: scale(1);
-  }
-
-}
-
-.title {
-  margin-top: 0;
-  margin-bottom: 0.67em;
-  transition: all 450ms linear;
-  font-size: calc(4vw + 4vw);
-  text-shadow: 0 3px 70px rgba(255, 137, 137, 0.88);
-  color: rgb(255, 76, 76);
-  &:hover {
-    text-shadow: 0 3px 60px rgb(255, 137, 137), 0 0 60px rgb(255, 66, 66);
-    color: rgb(255, 66, 66);
-  }
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
 }
 
 .routes {
   margin-top: 0;
   margin-bottom: 0.67em;
   padding-top: 0;
-  flex: 1;
   /* margin: 8% 0; */
   font-weight: bold;
-  transition: all 450ms linear;
-  opacity: 0.6;
-  &:hover {
-    opacity: 1;
-  }
+  transition: color 450ms linear,opacity 450ms linear,border-color 450ms linear;
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
 }
 
 .routerLink {
-  font-size: 1.4em;
+  font-size: 50px;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: white;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-  padding: 1px 27px 5px;
+  padding: 12px 27px 0;
   font-weight: 100;
-  background: rgba(0, 0, 0, 0);
-  border: 1px solid rgb(255, 255, 255);
-  border-right-width: 0;
-  &:first-child {
-    border-bottom-left-radius: 30px;
-    border-top-left-radius: 30px;
-  }
-  &:last-child {
-    border-bottom-right-radius: 30px;
-    border-top-right-radius: 30px;
-    border-right-width:1px;
-  }
+  background: transparent;
+  border: 1px solid transparent;
+  /* border-right-width: 0; */
+  border-radius: 2px;
+  position: relative;
+  opacity: 0.6;
+  transition: all 450ms linear;
 
-  &.routerLinkActive{
-    color: rgb(0, 0, 0);
-    background: rgb(255, 255, 255);
+  &.routerLinkActive, &:hover {
+    color: white;
+    border-color: white;
+    opacity: 1;
   }
 }
-
 
 .header.current-page-is-root {
   height: 100%;
@@ -140,10 +109,10 @@
     display: none;
   }
   .title {
-    font-size: calc(20vw + 5vw);
-    text-shadow: 0 3px 70px rgba(255, 137, 137, 0.88);
-    color: rgb(255, 76, 76);
-    margin: 0.8em 0;
+    font-size: calc(18vw + 5vw);
+    color: #ff4545;
+    margin: 5% 0 0;
+    text-shadow: 2px 2px #ffb2b2, 0 3px 44px rgba(255, 69, 69, 0.61);
   }
   .routes {
     .routerLink {
@@ -152,22 +121,34 @@
   }
 }
 
-
-.heart-icon{
+.heart-icon {
   width: 54px;
   height: 54px;
   position: absolute;
-  >svg{
+  > svg {
     background: none;
   }
-  &.him{
+  &.him {
     left: 68%;
     top: 84%;
     transform: scale(1.2) rotate(15deg);
   }
-  &.her{
+  &.her {
     left: 53%;
     top: 84%;
     transform: scale(1.2) rotate(-15deg);
+  }
+}
+
+
+
+@media screen and (max-width:1370px){
+  .header:not(.current-page-is-root){
+    .header-content{
+      .routerLink{
+        font-size: 25px;
+        padding: 12px 16px 0;
+      }
+    }
   }
 }
