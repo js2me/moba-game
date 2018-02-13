@@ -11,8 +11,7 @@ import './style.scss';
 const store = configureStore();
 const history = createBrowserHistory();
 
-const app = () => import(/* webpackMode: "lazy-once", webpackChunkName: "app-root" */ './containers/App');
-const settings = () => import(/* webpackMode: "lazy-once", webpackChunkName: "app-settings" */ './containers/Settings');
+const aboutYou = () => import(/* webpackMode: "lazy", webpackChunkName: "about-you" */ './containers/AboutYou');
 
 ReactDOM.render(
   <Provider store={store}>
@@ -20,10 +19,8 @@ ReactDOM.render(
       <div>
         <Header/>
         <Switch>
-          <Route path="/" exact={true} component={() => <AsyncComponent
-            moduleProvider={app}/>}/>
-          <Route path="/settings" component={() => <AsyncComponent
-            moduleProvider={settings}/>}/>
+          <Route path="/about-you" component={() => <AsyncComponent
+            moduleProvider={aboutYou}/>}/>
         </Switch>
       </div>
     </Router>

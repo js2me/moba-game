@@ -38,7 +38,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: isProduction
-          ? 'awesome-typescript-loader?module=es6'
+          ? 'awesome-typescript-loader?module=esnext'
           : [
             'react-hot-loader/webpack',
             'awesome-typescript-loader'
@@ -101,7 +101,7 @@ module.exports = {
       // static assets
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.png$/, use: 'url-loader?limit=10000' },
-      { test: /\.jpg$/, use: 'file-loader' },
+      { test: /\.jpg$/, use: 'url-loader?limit=10000' },
     ],
   },
   plugins: [

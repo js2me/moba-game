@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-export namespace App {
+export namespace AboutYou {
   export interface Props {
   }
 
@@ -10,12 +10,12 @@ export namespace App {
   }
 }
 
-export class App extends React.Component<App.Props, App.State> {
+export class AboutYou extends React.Component<AboutYou.Props, AboutYou.State> {
 
   render() {
     const { children } = this.props;
     return (
-      <div className='normal page-app'>
+      <div className='normal page-about-you'>
         {children}
       </div>
     );

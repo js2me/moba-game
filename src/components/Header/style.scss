@@ -1,50 +1,173 @@
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   height: 10%;
   transition: height 450ms linear;
-}
-.title{
-  margin: 0.8em 0;
-  text-shadow: 0 2px 13px rgba(0, 0, 0, 0.27);
-  transition: all 450ms linear;
-}
-.routes{
-  margin-top: 1.67em;
-  margin-bottom: 0.67em;
-  font-weight: bold;
-  transition: all 450ms linear;
+
+  &:not(.current-page-is-root){
+    .routes{
+      flex: 0.701;
+    }
+    .title{
+      flex: 1;
+    }
+    .background-header {
+      filter: brightness(.8) blur(10px);
+    }
+  }
 }
 
-.routerLink{
-  text-decoration: none;
+.background-header {
+  background-image: url(../../../assets/kremlin_gray.jpg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+  transition: transform 4s linear, opacity .8s ease;
+  background-position-y: bottom;
+  background-position-x: center;
+  opacity: 0;
+  transform: scale(1.2);
+  &.animation-triggered{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  &.trigger-animation {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-animation-name: background-header-image-picker; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 25s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: reverse; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    animation-name: background-header-image-picker;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+
+@keyframes background-header-image-picker {
+  0%{
+    background-image: url(../../../assets/kremlin_gray.jpg);
+    transform: scale(1);
+  }
+
+  25%{
+    transform: scale(1.2);
+  }
+
+  50%{
+    background-image: url(../../../assets/kremlin_gray_hands.jpg);
+    transform: scale(1);
+  }
+
+  75%{
+    transform: scale(1.2);
+  }
+
+  100%{
+    background-image: url(../../../assets/kremlin_gray_kisses.jpg);
+    transform: scale(1);
+  }
+
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0.67em;
+  transition: all 450ms linear;
+  font-size: calc(4vw + 4vw);
+  text-shadow: 0 3px 70px rgba(255, 137, 137, 0.88);
+  color: rgb(255, 76, 76);
+  &:hover {
+    text-shadow: 0 3px 60px rgb(255, 137, 137), 0 0 60px rgb(255, 66, 66);
+    color: rgb(255, 66, 66);
+  }
+}
+
+.routes {
+  margin-top: 0;
+  margin-bottom: 0.67em;
+  padding-top: 0;
+  flex: 1;
+  /* margin: 8% 0; */
+  font-weight: bold;
+  transition: all 450ms linear;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.routerLink {
   font-size: 1.4em;
-  color: rgb(77, 77, 77);
-  border: 1px solid rgb(77, 77, 77);
-  padding: 1px 7px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  padding: 1px 27px 5px;
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
+  border-right-width: 0;
+  &:first-child {
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+  &:last-child {
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-right-width:1px;
+  }
+
+  &.routerLinkActive{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+  }
 }
-.routerLinkActive{
-  color: rgb(245, 245, 245);
-  background: rgb(77, 77, 77);
-}
+
 
 .header.current-page-is-root {
   height: 100%;
-}
-
-.header.current-page-is-root ~ .normal {
-  min-height: 0;
-  display: none;
-}
-
-.header.current-page-is-root {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  ~ .normal {
+    min-height: 0;
+    display: none;
+  }
+  .title {
+    font-size: calc(20vw + 5vw);
+    text-shadow: 0 3px 70px rgba(255, 137, 137, 0.88);
+    color: rgb(255, 76, 76);
+    margin: 0.8em 0;
+  }
+  .routes {
+    .routerLink {
+      font-size: calc(3vw);
+    }
+  }
 }
 
-.header.current-page-is-root .title {
-  font-size: calc(10vw + 10vh);
-}
 
-.header.current-page-is-root .routes {flex: 1;}
+.heart-icon{
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  >svg{
+    background: none;
+  }
+  &.him{
+    left: 68%;
+    top: 84%;
+    transform: scale(1.2) rotate(15deg);
+  }
+  &.her{
+    left: 53%;
+    top: 84%;
+    transform: scale(1.2) rotate(-15deg);
+  }
+}
