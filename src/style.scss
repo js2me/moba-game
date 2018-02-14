@@ -36,6 +36,12 @@ body {
   font-weight: 300;
 }
 
+.normal {
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.3);
+}
+
 div#root{
   width:inherit;
   height:inherit;
@@ -62,9 +68,15 @@ input[type="checkbox"] {
 
 
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:550px) {
   div#root > div{
     padding:5% 0;
   }
 
+  .normal{
+    .title{
+      padding-top: 10% !important;
+      padding-bottom: 10% !important;
+    }
+  }
 }

@@ -51,7 +51,7 @@ export class AboutYou extends React.Component<AboutYou.Props, AboutYou.State> {
             margin: '20px'
           }}/></p>
         <p>Мне с тобой очень повезло, ведь ты у меня такая умничка и очень заботливая. Спасибо тебе за то, что ты такая
-          прекрасная! </p>
+          прекрасная! <Heart/><Heart/><Heart/></p>
       </div>
     );
   }

@@ -1,10 +1,5 @@
 
 
-.normal {
-  background: #fff;
-  position: relative;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.3);
-}
 .page-about-me{
   img {
     width: 450px;
@@ -61,9 +56,9 @@
 
 }
 
-@media screen and (max-width:425px){
+@media screen and (max-width:550px){
   .page-about-me img{
-    width: 350px;
+    width: 87%;
     right: 2%;
     bottom: 10%;
     transform: rotate(-15deg);

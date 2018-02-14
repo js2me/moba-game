@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Loading from '../components/Loading/index';
+import {PageLoading} from '../components/PageLoading';
 
 declare interface AsyncComponentProps {
   moduleProvider: Function;
@@ -31,6 +31,6 @@ export class AsyncComponent extends React.Component<AsyncComponentProps, AsyncCo
 
   render() {
     const {LoadedAsyncComponent} = this.state;
-    return LoadedAsyncComponent ? <LoadedAsyncComponent/> : <Loading text='Page loading'/>;
+    return LoadedAsyncComponent ? <LoadedAsyncComponent/> : <PageLoading/>;
   }
 }

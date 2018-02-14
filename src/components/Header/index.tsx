@@ -11,6 +11,7 @@ export namespace Header {
 
   export interface State {
     animateBackground: boolean,
+    menuShowed: boolean,
     backgroundImageCounter: number
   }
 }
@@ -24,9 +25,10 @@ export class Header extends React.Component<Header.Props, Header.State> {
     super(props, context);
     this.state = {
       backgroundImageCounter: 0,
-      animateBackground: false
-    }
-
+      animateBackground: false,
+      menuShowed: false
+    };
+    this.showHideMenu = this.showHideMenu.bind(this);
   }
 
   componentDidMount() {
@@ -36,22 +38,26 @@ export class Header extends React.Component<Header.Props, Header.State> {
 
   }
 
+  showHideMenu(e){
+    e.preventDefault();
+    this.setState({menuShowed: !this.state.menuShowed})
+  }
 
   render() {
-
+    const currentRouteIsRoot = this.context.router.route.location.pathname == '/';
 
     return (
-      <header className={`header ${this.context.router.route.location.pathname == '/' && 'current-page-is-root'}`}>
+      <header className={`header ${currentRouteIsRoot && 'current-page-is-root'} ${this.state.menuShowed && 'menu-showed'}`}>
         <div
-          className={`background-header ${this.state.animateBackground && 'animation-triggered'} ${this.state.animateBackground && this.context.router.route.location.pathname == '/' && 'trigger-animation'}`}/>
+          className={`background-header ${this.state.animateBackground && 'animation-triggered'} ${this.state.animateBackground && currentRouteIsRoot && 'trigger-animation'}`}/>
 
         <div className="header-content">
           <h1 className='title'>
             <span>МЫ</span>
           </h1>
-          <button className="show-routes-button"/>
-          <div className='routes'>
-            {this.context.router.route.location.pathname != '/' &&
+          <button className={`show-routes-button`} onClick={this.showHideMenu}/>
+          <div className='routes' onClick={this.state.menuShowed && this.showHideMenu}>
+            {!currentRouteIsRoot &&
             <NavLink className='routerLink' exact={true} activeClassName='routerLinkActive' to="/">главная</NavLink>}
             <NavLink className='routerLink' activeClassName='routerLinkActive' to="/about-you">о тебе</NavLink>
             <NavLink className='routerLink' activeClassName='routerLinkActive' to="/about-us">о нас</NavLink>
