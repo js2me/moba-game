@@ -22,13 +22,13 @@ export class AboutYou extends React.Component<AboutYou.Props, AboutYou.State> {
           Ты мне стала самым дорогим человеком, ради которого я способен на что угодно.
         </p>
         <p>Ты любишь обниматься и целоваться
-          <img src="../../assets/about_you/cat4.gif" alt="" style={{
+          <img src={require('../../assets/about_you/cat4.gif')} alt="" style={{
             width: '180px',
             verticalAlign: 'middle',
             margin: '20px'
           }}/></p>
 
-        <p>И ругать :( <img src="../../assets/about_you/cat3.gif" alt="" style={{
+        <p>И ругать :( <img src={require('../../assets/about_you/cat3.gif')} alt="" style={{
           width: '150px',
           verticalAlign: 'middle',
           margin: '20px'
@@ -38,18 +38,18 @@ export class AboutYou extends React.Component<AboutYou.Props, AboutYou.State> {
           иначе. Потому что в моей жизни появилось такое чудо как ты :**</p>
         <p>
           <span>А еще я знаю что очень любишь котов :з</span>
-          <img src="../../assets/about_you/cat1.gif" alt="" style={{
-            width: '190px',
-            verticalAlign: 'middle',
-            margin: '20px'
-          }}/>
-          <div>Поэтому держи милах</div>
-          <img src="../../assets/about_you/cat2.gif" alt="" style={{
+          <img src={require('../../assets/about_you/cat1.gif')} alt="" style={{
             width: '190px',
             verticalAlign: 'middle',
             margin: '20px'
           }}/>
         </p>
+        <p>Поэтому держи милах
+          <img src={require('../../assets/about_you/cat2.gif')} alt="" style={{
+            width: '190px',
+            verticalAlign: 'middle',
+            margin: '20px'
+          }}/></p>
         <p>Мне с тобой очень повезло, ведь ты у меня такая умничка и очень заботливая. Спасибо тебе за то, что ты такая
           прекрасная! </p>
       </div>

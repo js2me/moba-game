@@ -1,15 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, Switch } from 'react-router';
-import { createBrowserHistory } from 'history';
+import { Route, Switch } from 'react-router';
+import { HashRouter } from 'react-router-dom';
 import { configureStore } from './store';
 import { AsyncComponent } from './utils/AsyncComponentLoader';
 import { Header } from './components/Header/index';
 import './style.scss';
 
 const store = configureStore();
-const history = createBrowserHistory();
 
 const aboutYou = () => import(/* webpackMode: "lazy", webpackChunkName: "about-you" */ './containers/AboutYou');
 const aboutMe = () => import(/* webpackMode: "lazy", webpackChunkName: "about-me" */ './containers/AboutMe');
@@ -17,7 +16,7 @@ const aboutUs = () => import(/* webpackMode: "lazy", webpackChunkName: "about-me
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <HashRouter>
       <div>
         <Header/>
         <Switch>
@@ -29,7 +28,7 @@ ReactDOM.render(
             moduleProvider={aboutUs}/>}/>
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   </Provider>,
   document.getElementById('root')
 );

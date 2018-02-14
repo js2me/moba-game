@@ -22,8 +22,8 @@ module.exports = {
   output: {
     path: outPath,
     publicPath: '/',
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.chunk.js',
+    filename: '[name].bundle.[hash].js',
+    chunkFilename: '[name].bundle.chunk.[hash].js',
   },
   target: 'web',
   resolve: {
@@ -100,9 +100,10 @@ module.exports = {
       },
       // static assets
       {test: /\.html$/, use: 'html-loader'},
+      {test: /\.gif/, use: 'url-loader?mimetype=image/png'},
       {
         test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        use: 'base64-inline-loader?limit=5000&name=[name].[ext]'
+        use: 'base64-inline-loader?limit=5000&name=[hash].[ext]'
       }
     ],
   },

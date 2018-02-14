@@ -43,13 +43,13 @@ export class AboutUs extends React.Component<AboutUs.Props, AboutUs.State> {
             verticalAlign: 'middle',
             margin: '20px'
           }}/>
-          <div>Поэтому держи милах</div>
-          <img src="../../assets/about_you/cat2.gif" alt="" style={{
-            width: '190px',
-            verticalAlign: 'middle',
-            margin: '20px'
-          }}/>
         </p>
+        <p>Поэтому держи милах</p>
+        <img src="../../assets/about_you/cat2.gif" alt="" style={{
+          width: '190px',
+          verticalAlign: 'middle',
+          margin: '20px'
+        }}/>
         <p>Мне с тобой очень повезло, ведь ты у меня такая умничка и очень заботливая. Спасибо тебе за то, что ты такая
           прекрасная! </p>
       </div>
