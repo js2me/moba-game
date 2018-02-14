@@ -45,6 +45,7 @@ div#root{
     height:inherit;
     position: relative;
     padding: 5% 10% 5%;
+    overflow-x: hidden;
     .normal {
       min-height: 90%;
     }
@@ -57,4 +58,13 @@ input[type="checkbox"] {
 
 *, body * {
   box-sizing: border-box;
+}
+
+
+
+@media screen and (max-width:425px) {
+  div#root > div{
+    padding:5% 0;
+  }
+
 }

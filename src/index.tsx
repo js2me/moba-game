@@ -13,6 +13,7 @@ const history = createBrowserHistory();
 
 const aboutYou = () => import(/* webpackMode: "lazy", webpackChunkName: "about-you" */ './containers/AboutYou');
 const aboutMe = () => import(/* webpackMode: "lazy", webpackChunkName: "about-me" */ './containers/AboutMe');
+const aboutUs = () => import(/* webpackMode: "lazy", webpackChunkName: "about-me" */ './containers/AboutUs');
 
 ReactDOM.render(
   <Provider store={store}>
@@ -24,6 +25,8 @@ ReactDOM.render(
             moduleProvider={aboutYou}/>}/>
           <Route path="/about-me" component={() => <AsyncComponent
             moduleProvider={aboutMe}/>}/>
+          <Route path="/about-us" component={() => <AsyncComponent
+            moduleProvider={aboutUs}/>}/>
         </Switch>
       </div>
     </Router>
