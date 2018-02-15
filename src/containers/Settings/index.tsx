@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as TodoActions from '../../actions/todos';
-import * as style from './style.css';
+import './style.scss';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
@@ -24,7 +24,7 @@ export class Settings extends React.Component<Settings.Props, Settings.State> {
   render() {
     const { todos, actions, children } = this.props;
     return (
-      <div className={style.normal}>
+      <div className='page settings'>
         LOL
         {children}
       </div>

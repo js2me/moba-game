@@ -11,7 +11,7 @@ import './style.scss';
 const store = configureStore();
 const history = createBrowserHistory();
 
-const app = () => import(/* webpackMode: "lazy-once", webpackChunkName: "app-root" */ './containers/App');
+const playground = () => import(/* webpackMode: "lazy-once", webpackChunkName: "app-playground" */ './containers/Playground');
 const settings = () => import(/* webpackMode: "lazy-once", webpackChunkName: "app-settings" */ './containers/Settings');
 
 ReactDOM.render(
@@ -21,9 +21,11 @@ ReactDOM.render(
         <Header/>
         <Switch>
           <Route path="/" exact={true} component={() => <AsyncComponent
-            moduleProvider={app}/>}/>
+            moduleProvider={playground}/>}/>
           <Route path="/settings" component={() => <AsyncComponent
             moduleProvider={settings}/>}/>
+          <Route path="/game" component={() => <AsyncComponent
+            moduleProvider={playground}/>}/>
         </Switch>
       </div>
     </Router>

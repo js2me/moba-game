@@ -2,18 +2,19 @@
   display: flex;
   justify-content: space-between;
   height: 10%;
-  transition: height 450ms linear;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 5% 10% 5%;
 }
 .title{
-  margin: 0.8em 0;
+  margin: 0;
   text-shadow: 0 2px 13px rgba(0, 0, 0, 0.27);
-  transition: all 450ms linear;
 }
 .routes{
-  margin-top: 1.67em;
-  margin-bottom: 0.67em;
   font-weight: bold;
-  transition: all 450ms linear;
 }
 
 .routerLink{
@@ -22,6 +23,9 @@
   color: rgb(77, 77, 77);
   border: 1px solid rgb(77, 77, 77);
   padding: 1px 7px;
+  &:not(:last-child) {
+    border-right-color: rgba(0, 0, 0, 0);
+  }
 }
 .routerLinkActive{
   color: rgb(245, 245, 245);
@@ -38,7 +42,7 @@
 }
 
 .header.current-page-is-root {
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   text-align: center;
 }
@@ -47,4 +51,3 @@
   font-size: calc(10vw + 10vh);
 }
 
-.header.current-page-is-root .routes {flex: 1;}
