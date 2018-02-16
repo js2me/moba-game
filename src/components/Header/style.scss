@@ -34,20 +34,24 @@
 
 .header.current-page-is-root {
   height: 100%;
-}
-
-.header.current-page-is-root ~ .normal {
-  min-height: 0;
-  display: none;
-}
-
-.header.current-page-is-root {
   justify-content: space-between;
   flex-direction: column;
   text-align: center;
-}
+  ~ .normal {
+    min-height: 0;
+    display: none;
+  }
+  .title {
+    font-size: calc(10vw + 10vh);
+    color: rgb(245, 245, 245);
+  }
+  .routerLink {
+    color: rgb(245, 245, 245);
+    border: 1px solid rgb(245, 245, 245);
+    &.routerLinkActive {
+      color: rgb(77, 77, 77);
+      background: rgb(245, 245, 245);
+    }
 
-.header.current-page-is-root .title {
-  font-size: calc(10vw + 10vh);
+  }
 }
-

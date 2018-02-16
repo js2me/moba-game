@@ -32,8 +32,15 @@ export class Playground extends React.Component<Playground.Props, Playground.Sta
 
     let renderer = new THREE.WebGLRenderer( { antialias: true } );
     // renderer.setSize( '', window.document.body.offsetHeight );
-    renderer.domElement.style.width = '100%';
-    renderer.domElement.style.height = '100%';
+    // renderer.domElement.style.width = '100%';
+    // renderer.domElement.style.height = '100%';
+    if(window.document.body.offsetHeight > window.document.body.offsetWidth){
+      this.playgroundRef.style.width = '100vw';
+      this.playgroundRef.style.height = '100vw';
+    }else{
+      this.playgroundRef.style.width = '100vh';
+      this.playgroundRef.style.height = '100vh';
+    }
     this.playgroundRef.appendChild( renderer.domElement );
   }
 
