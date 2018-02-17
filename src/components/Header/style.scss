@@ -167,7 +167,7 @@ $second-color: rgb(245, 245, 245);
     }
     &--active {
       color: $second-color;
-      //background: $main-color;
+      background: transparent;
     }
   }
 }
