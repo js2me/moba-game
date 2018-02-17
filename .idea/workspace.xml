@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0566887b-5dd9-436e-905d-2cdf7c10d6bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header/style.scss" afterPath="$PROJECT_DIR$/src/components/Header/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Settings/index.tsx" afterPath="$PROJECT_DIR$/src/containers/Settings/index.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Settings/style.scss" afterPath="$PROJECT_DIR$/src/containers/Settings/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.tsx" afterPath="$PROJECT_DIR$/src/index.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Header/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="171" column="3" lean-forward="true" selection-start-line="171" selection-start-column="3" selection-end-line="171" selection-end-column="3" />
+            <state relative-caret-position="577">
+              <caret line="169" column="32" lean-forward="true" selection-start-line="169" selection-start-column="32" selection-end-line="169" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -65,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
@@ -181,10 +176,10 @@
         <option value="$PROJECT_DIR$/src/containers/Playground/style.scss" />
         <option value="$PROJECT_DIR$/src/containers/Settings/style.scss" />
         <option value="$PROJECT_DIR$/src/components/Header/index.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Header/style.scss" />
         <option value="$PROJECT_DIR$/src/containers/Settings/index.tsx" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
         <option value="$PROJECT_DIR$/src/style.scss" />
+        <option value="$PROJECT_DIR$/src/components/Header/style.scss" />
       </list>
     </option>
   </component>
@@ -326,12 +321,12 @@
       <workItem from="1518384023041" duration="7652000" />
       <workItem from="1518417430874" duration="2757000" />
       <workItem from="1518472737050" duration="1760000" />
-      <workItem from="1518759842243" duration="12836000" />
+      <workItem from="1518759842243" duration="13132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35138000" />
+    <option name="totallyTimeSpent" value="35434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -678,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Header/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="171" column="3" lean-forward="true" selection-start-line="171" selection-start-column="3" selection-end-line="171" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Settings/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -726,6 +713,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="169" column="32" lean-forward="true" selection-start-line="169" selection-start-column="32" selection-end-line="169" selection-end-column="32" />
           <folding />
         </state>
       </provider>
