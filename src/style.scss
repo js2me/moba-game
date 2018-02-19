@@ -58,7 +58,7 @@ div#root {
   /* margin-top: 40%; */
   width: 65%;
   left: 17.5%;
-  top: 100%;
+  top: 48%;
   position: relative;
   color: #5c6b88;
   text-align: justify;
@@ -86,7 +86,7 @@ div#root {
     filter: blur(13px);
     transform: scale(1.03,1.035);
    */
-  .scrolled-down & {
+  .root-scrolled & {
     transform: scale(1.03);
     background-position-y: center;
   }
@@ -110,12 +110,17 @@ div#root {
 .page-description {
   position: fixed;
   text-align: center;
-  left: 50%;
-  transform: translate(-50%, -88%);
-  top: 12%;
-  font-size: 3vw;
-  background: #4f648f;
+  left: 74%;
+  width: 395px;
+  transform: translate(-50%, -62%);
+  top: 38%;
+  font-size: 2vw;
+  background: rgba(0, 0, 0, 0.22);
   padding: 5px 20px;
-  color: whitesmoke;
+  color: rgba(205, 204, 210, 0.64);
   font-weight: 100;
+  transition: opacity 350ms ease;
+  .root-scrolled &{
+    opacity: 0;
+  }
 }

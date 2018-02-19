@@ -7,6 +7,7 @@ import {configureStore} from './store';
 import {AsyncComponent} from './utils/AsyncComponentLoader';
 import {Header} from './components/Header/index';
 import './style.scss';
+import RootEventListener from './utils/RootEventListener';
 
 const store = configureStore();
 const history = createBrowserHistory();
@@ -16,24 +17,7 @@ const playground = () => import(/* webpackMode: "lazy", webpackChunkName: "app-p
 const settings = () => import(/* webpackMode: "lazy", webpackChunkName: "app-settings" */ './containers/Settings');
 
 const root = ((root: any) => {
-  let rootIsScrolledDown = false;
-
-  root.addEventListener('scroll', (e) => {
-    let pageBackground = document.querySelector('.page-background') as any;
-    const {classList, scrollTop, scrollHeight} = e.target as any;
-    if (pageBackground) {
-      if (Math.round(((scrollTop) / scrollHeight) * 100) > 55) {
-        pageBackground.style.setProperty('background-position-y', '100%');
-      } else {
-        pageBackground.style.removeProperty('background-position-y');
-      }
-    }
-    let isScrolledDown = scrollTop > (window.document.body.clientHeight / 1.7);
-    if (rootIsScrolledDown != isScrolledDown) {
-      rootIsScrolledDown = isScrolledDown;
-      classList[isScrolledDown && 'add' || 'remove']('scrolled-down');
-    }
-  });
+  root.addEventListener('scroll', RootEventListener.OnScroll);
 
   return root;
 })(document.getElementById('root'));

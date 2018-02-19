@@ -14,7 +14,7 @@ $second-color: rgb(245, 245, 245);
     border-radius: 0;
     overflow: hidden;
   }
-  .scrolled-down & {
+  .root-scrolled & {
     &:not(.nav-showed) {
       height: 132px;
       background-color: rgb(245, 245, 245);
@@ -50,7 +50,7 @@ $second-color: rgb(245, 245, 245);
   }
 
   .header:not(.nav-showed) & {
-    .scrolled-down & {
+    .root-scrolled & {
       margin-top: 28px;
       background: rgba(0, 0, 0, 0);
       transform: translateX(94px);
@@ -73,7 +73,7 @@ $second-color: rgb(245, 245, 245);
   .nav-showed & {
     background: $second-color;
   }
-  .scrolled-down & {
+  .root-scrolled & {
     top: 32px;
   }
   &:hover {
@@ -138,7 +138,7 @@ $second-color: rgb(245, 245, 245);
     transition: all .7s cubic-bezier(.25, .8, .25, 1) 0s !important;
   }
 
-  .scrolled-down & {
+  .root-scrolled & {
     top: 32px;
   }
 }
@@ -148,7 +148,6 @@ $second-color: rgb(245, 245, 245);
   display: flex;
   position: absolute;
   flex-direction: column;
-  /* top: 20%; */
   right: 10%;
   z-index: 1;
   pointer-events: none;
@@ -162,13 +161,13 @@ $second-color: rgb(245, 245, 245);
     top: 20%;
   }
   .header:not(.nav-showed) & {
-    left: 10%;
+    left: 15%;
     right: auto;
-    margin-top: 10%;
+    margin-top: 12%;
   }
 
   .header:not(.nav-showed) & {
-    .scrolled-down & {
+    .root-scrolled & {
       left: auto;
       margin-top: 28px;
       margin-left: 281px;
@@ -198,9 +197,9 @@ $second-color: rgb(245, 245, 245);
   }
 
   .header:not(.nav-showed) & {
-    .scrolled-down & {
+    .root-scrolled & {
       &--active {
-        font-size: 4em;
+        font-size: 4.2vw;
         color: rgb(119, 135, 165);
       }
     }
