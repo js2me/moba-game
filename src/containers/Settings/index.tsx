@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { RootState } from '../../reducers';
 import { Header, MainSection } from '../../components';
+import PageInformer from "../../utils/PageInformer";
 
 export namespace Settings {
   export interface Props extends RouteComponentProps<void> {
@@ -20,6 +21,11 @@ export namespace Settings {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export class Settings extends React.Component<Settings.Props, Settings.State> {
+
+  componentWillMount(){
+
+    PageInformer.setPageInfo('Настройки', 'Настройки игры MOBA-GAME ');
+  }
 
   render() {
     const { todos, actions, children } = this.props;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as THREE from 'three';
 import './style.scss';
+import PageInformer from '../../utils/PageInformer';
 
 export namespace Playground {
   export interface Props {
@@ -16,9 +17,11 @@ export namespace Playground {
 export class Playground extends React.Component<Playground.Props, Playground.State> {
   playgroundRef: HTMLDivElement;
 
+  componentWillMount(){
+    PageInformer.setPageInfo('Игра', 'Ну что, приступим к битве ?');
+  }
 
   componentDidMount(){
-
     let camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
     camera.position.z = 1;
 
