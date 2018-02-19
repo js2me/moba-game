@@ -14,6 +14,19 @@ $second-color: rgb(245, 245, 245);
     border-radius: 0;
     overflow: hidden;
   }
+  .scrolled-down & {
+    &:not(.nav-showed) {
+      height: 132px;
+      background-color: rgb(245, 245, 245);
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.32);
+    }
+  }
+  &.root-page {
+    ~ .page-content-divider {
+      bottom: -20%;
+      position: fixed;
+    }
+  }
 }
 
 .header-background {
@@ -35,8 +48,8 @@ $second-color: rgb(245, 245, 245);
   transform: translateX(150px);
   transition: transform 350ms ease-in-out;
   font-size: 4em;
-  color: $main-color;
-  background: $second-color;
+  color: rgb(92, 107, 136);
+  background: rgb(245, 245, 245);
   padding: 0 14px;
   .nav-showed & {
     pointer-events: all;
@@ -46,12 +59,19 @@ $second-color: rgb(245, 245, 245);
     padding: 0;
   }
 
+  .header:not(.nav-showed) & {
+    .scrolled-down & {
+      margin-top: 28px;
+      background: rgba(0, 0, 0, 0);
+      transform: translateX(94px);
+    }
+  }
 }
 
 .menu-button {
   width: 64px;
   height: 64px;
-  background: $main-color;
+  background: rgb(92, 107, 136);
   border-radius: 50%;
   transition: all 125ms cubic-bezier(0.22, 0.61, 0.36, 1);
   position: absolute;
@@ -63,7 +83,9 @@ $second-color: rgb(245, 245, 245);
   .nav-showed & {
     background: $second-color;
   }
-
+  .scrolled-down & {
+    top: 32px;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -112,18 +134,22 @@ $second-color: rgb(245, 245, 245);
   transform: scale(0);
   width: 64px;
   height: 64px;
-  background-color: $main-color;
+  background-color: rgb(92, 107, 136);
   position: absolute;
   right: 128px;
   top: 64px;
   z-index: 0;
-  -webkit-transition: all .375s cubic-bezier(.25, .8, .25, 1) 0s;
-  transition: all .375s cubic-bezier(.25, .8, .25, 1) 0s;
+  -webkit-transition: all 0.375s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  transition: all 0.375s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
   .nav-showed & {
     -webkit-transform: scale(90);
     transform: scale(90);
     -webkit-transition: all .7s cubic-bezier(.25, .8, .25, 1) 0s !important;
     transition: all .7s cubic-bezier(.25, .8, .25, 1) 0s !important;
+  }
+
+  .scrolled-down & {
+    top: 32px;
   }
 }
 
@@ -132,8 +158,9 @@ $second-color: rgb(245, 245, 245);
   display: flex;
   position: absolute;
   flex-direction: column;
-  top: 20%;
+  /* top: 20%; */
   right: 10%;
+  z-index: 1;
   pointer-events: none;
   transform: translateX(40px);
   transition: transform 350ms ease-in-out;
@@ -142,18 +169,27 @@ $second-color: rgb(245, 245, 245);
     visibility: visible;
     pointer-events: all;
     transform: translateX(0);
+    top: 20%;
   }
   .header:not(.nav-showed) & {
     left: 10%;
     right: auto;
     margin-top: 10%;
   }
+
+  .header:not(.nav-showed) & {
+    .scrolled-down & {
+      left: auto;
+      margin-top: 28px;
+      margin-left: 281px;
+    }
+  }
 }
 
 .router-link {
   text-decoration: none;
   font-size: 11.4em;
-  color: $second-color;
+  color: rgb(245, 245, 245);
   padding: 0 0.1em;
   text-align: right;
   &--active {
@@ -170,4 +206,14 @@ $second-color: rgb(245, 245, 245);
       background: transparent;
     }
   }
+
+  .header:not(.nav-showed) & {
+    .scrolled-down & {
+      &--active {
+        font-size: 4em;
+        color: rgb(119, 135, 165);
+      }
+    }
+  }
+
 }

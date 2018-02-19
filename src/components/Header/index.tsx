@@ -31,7 +31,7 @@ export class Header extends React.Component<Header.Props> {
 
   render() {
     return (
-      <header className={`header ${this.state.navigationShowed && 'nav-showed'}`}>
+      <header className={`header ${this.state.navigationShowed && 'nav-showed'} ${this.context.router.route.location.pathname == '/' && 'root-page'}`}>
         <div className='menu-button' onClick={this.showHideNavigation}>
           <span className='menu-button-bar'/>
           <span className='menu-button-bar'/>

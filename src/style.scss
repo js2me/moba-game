@@ -57,19 +57,20 @@ div#root{
   width: 100%;
   left: 0;
   height: 20px;
-  background: white;
+  background: rgb(245, 245, 245);
   bottom: 0;
-  transform: rotate(4deg) scale(1.2,10);
+  transform: rotate(4deg) scale(1.2, 10);
   box-sizing: unset;
+  transition: all 275ms ease-in-out;
 }
 .page{
   /* min-height: 70%; */
-  padding: 2% 10% 2%;
+  padding: 5% 10%;
   font-size: 2em;
   /* margin-top: 40%; */
   top: 100%;
   position: relative;
-  color: rgb(152, 152, 152);
+  color: rgb(93, 93, 93);
   text-align: justify;
-  background: rgb(255, 255, 255);
+  background: rgb(245, 245, 245);
 }
