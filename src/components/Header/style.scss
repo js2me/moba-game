@@ -37,7 +37,7 @@ $second-color: rgb(245, 245, 245);
   pointer-events: none;
   transform: translateX(150px);
   transition: transform 350ms ease-in-out;
-  font-size: 4em;
+  font-size: 4.2vw;
   color: rgb(92, 107, 136);
   background: rgb(245, 245, 245);
   padding: 0 14px;
@@ -178,7 +178,7 @@ $second-color: rgb(245, 245, 245);
 
 .router-link {
   text-decoration: none;
-  font-size: 11.4em;
+  font-size: 11vw;
   color: rgb(245, 245, 245);
   padding: 0 0.1em;
   text-align: right;
