@@ -20,6 +20,7 @@
     "@types/react-router": "4.0.18",
     "@types/react-router-dom": "^4.2.3",
     "@types/redux-actions": "2.2.2",
+    "@types/three": "^0.89.10",
     "@types/webpack": "3.8.1",
     "@types/webpack-env": "1.13.2",
     "awesome-typescript-loader": "^3.4.0",
@@ -54,6 +55,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-actions": "^2.2.1"
+    "redux-actions": "^2.2.1",
+    "three": "^0.90.0"
   }
 }
